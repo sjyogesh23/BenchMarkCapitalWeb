@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +16,88 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.expert_card:hover .expert_card_desc{
+  color: inherit;
+}
+
+.expert_card_circle{
+  opacity: 0;
+}
+
+.expert_card:hover .expert_card_circle{
+  animation: expert_card_animate 2s;
+}
+
+
+@keyframes expert_card_animate {
+  0% {
+    scale: 0;
+    opacity: 0.8;
+    border: 5px;
+    scale: 1;
+  }
+  50% {
+    opacity: 0.0;
+    border: 2px;
+    scale: 5;
+  }
+  51% {
+    opacity: 0;
+    border: 0;
+    scale: 5;
+  }
+  100%{
+    opacity: 0;
+    scale: 0;
+  }
+}
+
+.expert_card:hover .expert_card_img{
+  transform: scale(1.3);  
+}
+
+.expert_card:hover .expert_card_img_circle{
+  transform: scale(0.1);  
+}
+
+
+@keyframes height-opacity-dark {
+  0% {
+    height: 100vh;
+    opacity: 0.2  ;
+  }
+  50% {
+    height: 40vh;
+    opacity: 0.8;
+  }
+  100% {
+    height: 100vh;
+    opacity: 0.2;
+  }
+}
+
+@keyframes height-opacity-light {
+  0% {
+    height: 100vh;
+    opacity: 0.2;
+  }
+  50% {
+    height: 20vh;
+    opacity: 0.8;
+  }
+  100% {
+    height: 100vh;
+    opacity: 0.2;
+  }
+}
+
+.animate-height-opacity-dark {
+  animation: height-opacity-dark 8s infinite;
+}
+
+.animate-height-opacity-light {
+  animation: height-opacity-light 8s infinite;
+}
+
