@@ -43,7 +43,7 @@ const DataInputContainer = ({ darkMode }) => {
   };
 
   return (
-    <div className={`mx-auto w-full px-4 pt-32`}>
+    <div className={`mx-auto w-full px-4 py-32`}>
       <div className="max-w-md mx-auto">
         <h2
           className={`font-bold text-${

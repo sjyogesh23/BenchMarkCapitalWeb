@@ -11,6 +11,8 @@ import Drawer from "@mui/material/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
 import ToggleColorMode from "./ToggleColorMode";
 import { Link } from "@mui/material";
+import NavLogo from "./NavLogo.png";
+import NavLogoDark from "./NavLogoDark.png";
 
 const logoStyle = {
   width: "140px",
@@ -77,12 +79,12 @@ const NavigationBar = ({ darkMode, toggleDarkMode, sections }) => {
               <Box className="min-w-[60vw] p-2 flex flex-col mt-4">
                 <div>
                   {sections.map((section) => (
-                    <MenuItem className="py-3 ">
-                      <Link
-                        href={section.href_link}
-                        sx={{ textDecoration: "none" }}
-                        onClick={toggleDrawer(false)}
-                      >
+                    <Link
+                      href={section.href_link}
+                      sx={{ textDecoration: "none" }}
+                      onClick={toggleDrawer(false)}
+                    >
+                      <MenuItem className="py-3 ">
                         <Typography
                           sx={{ textDecoration: "none" }}
                           className={`text-${
@@ -91,30 +93,29 @@ const NavigationBar = ({ darkMode, toggleDarkMode, sections }) => {
                         >
                           {section.title}
                         </Typography>
-                      </Link>
-                    </MenuItem>
+                      </MenuItem>
+                    </Link>
                   ))}
                 </div>
               </Box>
             </Drawer>
           </Box>
-          <Box className="flex items-center ml-[-18px] px-0">
-            <img
-              src={
-                "https://catalogodepecas.empresasrandon.com.br/img/Randontransparente_fonte_Preta.png?5818"
-              }
-              style={logoStyle}
-              alt="logo of sitemark"
-              className={darkMode ? "invert" : "invert-0"}
-            />
+          <Box className="flex items-center mx-2 px-0">
+            <Link href="#Home">
+              <img
+                src={darkMode ? NavLogoDark : NavLogo}
+                style={logoStyle}
+                alt="logo of sitemark"
+              />
+            </Link>
             <Box
               className={`hidden md:flex ${
                 darkMode ? "invert" : "invert-0"
               } text`}
             >
               {sections.map((section) => (
-                <MenuItem className="py-3 px-6">
-                  <Link to={section.href_link} sx={{ textDecoration: "none" }}>
+                <Link href={section.href_link} sx={{ textDecoration: "none" }}>
+                  <MenuItem className="py-3 px-6">
                     <Typography
                       variant="body2"
                       color="text.primary"
@@ -122,8 +123,8 @@ const NavigationBar = ({ darkMode, toggleDarkMode, sections }) => {
                     >
                       {section.title}
                     </Typography>
-                  </Link>
-                </MenuItem>
+                  </MenuItem>
+                </Link>
               ))}
             </Box>
           </Box>

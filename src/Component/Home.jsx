@@ -26,18 +26,24 @@ const Home = ({ darkMode }) => {
             >
               Bench Mark Capital
             </h1>
-            <div className="max-w-[800px]  text-sm md:text-lg">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s.Lorem Ipsum is simply dummy text of the
-              printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s.
+            <div className="max-w-[800px] text-sm md:text-lg">
+              Benchmark capital is a leading professionals who provide expert
+              advice and guidance on various financial matters to individuals,
+              businesses, or organizations. Their primary role is to help
+              clients make informed decisions regarding their finances to meet
+              their financial goals and objectives. Financial consultants
+              typically offer services such as investment advice, retirement
+              planning, tax planning, estate planning, risk management, and
+              overall financial management. Overall, financial consultants play
+              a crucial role in helping individuals and organizations navigate
+              the complexities of the financial world and make sound financial
+              decisions for their future.
             </div>
             <button
               className={`py-2 bg-[#045CD3] mt-4 rounded-md  hover:bg-[#024BAF] `}
             >
               <a
-                href="#contact"
+                href="#Contact"
                 className="text-white text-xl mx-8 no-underline hover:tracking-wide duration-100 font-semibold"
               >
                 Contact Us
