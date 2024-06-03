@@ -67,7 +67,7 @@ function Partners({ darkMode, row1, row2 }) {
     display: grid;
     place-items: center;
     width: clamp(10rem, 1rem + 40vmin, 30rem);
-    padding: calc(clamp(10rem, 1rem + 30vmin, 30rem) / 10);
+    padding: calc(clamp(100rem, 1rem + 30vmin, 30rem) / 100);
   `;
 
   const Image = styled.img`
@@ -77,7 +77,7 @@ function Partners({ darkMode, row1, row2 }) {
     background: white;
     border-radius: 0.5rem;
     aspect-ratio: 16/9;
-    padding: 5px 20px;
+    padding: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   `;
 

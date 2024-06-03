@@ -5,36 +5,34 @@ import { HiOutlineMail } from "react-icons/hi";
 import { BiLogoPlayStore } from "react-icons/bi";
 import { FaDownload } from "react-icons/fa6";
 import { RiTwitterXLine } from "react-icons/ri";
-const SocialLinks = () => {
+const SocialLinks = ({ darkMode }) => {
   const links = [
     {
       id: 1,
       child: (
         <>
-          Linkedin
           <FaLinkedin size={30} />
+          Linkedin
         </>
       ),
       href: "https://www.linkedin.com/in/harrish-arun-1a8890227/",
-      style: "tounded-tr-md",
     },
     {
       id: 2,
       child: (
         <>
-          My Apps
           <BiLogoPlayStore size={30} />
+          My Apps
         </>
       ),
       href: "https://play.google.com/store/apps/developer?id=HarrishArun",
-      style: "tounded-tr-md",
     },
     {
       id: 3,
       child: (
         <>
-          Github
           <FaGithub size={30} />
+          Github
         </>
       ),
       href: "https://github.com/HarrishArun",
@@ -44,20 +42,19 @@ const SocialLinks = () => {
       id: 4,
       child: (
         <>
-          Resume
           <FaDownload size={30} />
+          Resume
         </>
       ),
       href: "/resume.pdf",
-      style: "tounded-br-md",
       download: true,
     },
     {
       id: 5,
       child: (
         <>
-          Mail
           <HiOutlineMail size={30} />
+          Mail
         </>
       ),
       href: "mailto:harrisharun2003@gmail.com",
@@ -66,39 +63,40 @@ const SocialLinks = () => {
       id: 6,
       child: (
         <>
-          Twitter
           <RiTwitterXLine size={30} />
+          Twitter
         </>
       ),
       href: "https://twitter.com/Harrisharun2",
-      style: "tounded-tr-md",
     },
   ];
 
   return (
-    <div className="hidden lg:flex flex-col top-[23%] left-0 fixed bg-gray-700">
-      <ul>
-        {links.map(({ id, child, href, style, download }) => (
-          <li
-            key={id}
-            className={
-              "flex justify-between items-center w-40 h-10 px-4 ml-[-100px] hover:ml-[-10px] hover:rounded-md duration-300 bg-gray-700" +
-              " " +
-              style
-            }
-          >
-            <a
-              href={href}
-              className="flex justify-between items-center w-full text-white"
-              download={download}
-              target="_blank"
-              rel="noreferrer"
+    <div className="z-[100] h-screen grid items-center right-0 fixed">
+      <div className="hidden lg:flex flex-col">
+        <ul>
+          {links.map(({ id, child, href, download }) => (
+            <li
+              key={id}
+              className={`flex justify-between items-center w-40 h-10 p-4 my-2 mr-[-90px] hover:ml-[-80px] rounded-full duration-300  border-2 border-blue-500 rounded-r-lg ${
+                darkMode ? "bg-gray-800" : "bg-gray-100"
+              }`}
             >
-              {child}
-            </a>
-          </li>
-        ))}
-      </ul>
+              <a
+                href={href}
+                className={`flex justify-between items-center w-full ${
+                  darkMode ? "text-white" : "text-black"
+                } no-underline`}
+                download={download}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {child}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

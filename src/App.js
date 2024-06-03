@@ -221,7 +221,8 @@ const App = () => {
         darkMode ? "dark-mode" : "light-mode"
       } min-h-screen text-center`}
     >
-      <SocialLinks />
+      <SocialLinks darkMode={darkMode} />
+
       <NavigationBar
         darkMode={darkMode}
         toggleDarkMode={toggleDarkMode}
